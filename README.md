@@ -28,7 +28,12 @@ services:
 ### 1. 於終端機輸入
 ```
 git clone https://github.com/Chei-YuanChi/laravel_HW.git
-cd laravel_hw
+cd laravel_hw/web
+ren .env.example .env (window)
+mv .env.example .env (linux)
+composer update
+php artisan key:generate
+cd ..
 docker-compose up -d --build
 ```
 ### 2. 連線至 ( http://localhost:8080 )
