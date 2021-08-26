@@ -27,7 +27,7 @@ services:
 ## docker使用流程
 ### 1. 於終端機輸入
 ```
-git clone https://github.com/Chei-YuanChi/Django_HW.git
+git clone https://github.com/Chei-YuanChi/laravel_HW.git
 cd laravel_hw
 docker-compose up -d --build
 ```
