@@ -3,7 +3,7 @@
 * Dockerfile ：
 ```
 FROM php:7.4-fpm
-RUN curl -sS http://getcomposer.org/installer | php
+RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 RUN mkdir /app
 WORKDIR /app
@@ -15,10 +15,11 @@ version: '3'
 
 services:
     web:
+        image: lab_laravel
         build: .
-        command: php artisan serve --host=0.0.0.0
+        command: php artisan serve --host=0.0.0.0    
         ports:
-            - 8080:8000
+            - 8000:8000
         volumes:
             - ./web:/app
 
@@ -28,15 +29,10 @@ services:
 ### 1. 於終端機輸入
 ```
 git clone https://github.com/Chei-YuanChi/laravel_HW.git
-cd laravel_hw/web
-ren .env.example .env (window)
-mv .env.example .env (linux)
-composer update
-php artisan key:generate
-cd ..
+cd laravel_hw
 docker-compose up -d --build
 ```
-### 2. 連線至 ( http://localhost:8080 )
+### 2. 連線至 ( http://localhost:8000 )
 ### 3. remove container
 ```
 docker-compose down
